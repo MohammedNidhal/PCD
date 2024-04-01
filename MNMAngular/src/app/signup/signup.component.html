@@ -3,7 +3,7 @@
     <h2>Step 1: Personal Data</h2>
     <form (ngSubmit)="nextStep()">
       <div>
-        <label for="name">Name:</label>
+        <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" [(ngModel)]="userData.name" required>
       </div>
       <div>
@@ -11,13 +11,29 @@
         <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
       </div>
       <div>
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" [(ngModel)]="userData.address" required>
-      </div>
-      <div>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
       </div>
+      <div> 
+      <label for="birthday">Date of birth:</label>
+      <input type="date" id="birthday" name="birthday" [(ngModel)]="userData.birthday" required>
+    </div>
+    <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="userData.address" required>
+  </div>
+  <div>
+    <label for="address">City:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="userData.address" required>
+  </div>
+  <div>
+    <label for="address">Postal Code:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="userData.address" required>
+  </div>
+  <div>
+    <label for="address">Country:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="userData.address" required>
+  </div>
       <button type="submit">Next</button>
     </form>
   </div>
