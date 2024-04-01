@@ -1,10 +1,10 @@
-package com.mnmpcd.mnm;
+package com.mnm.mnmpcd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MnmApplicationTests {
+class MnmpcdApplicationTests {
 
 	@Test
 	void contextLoads() {
