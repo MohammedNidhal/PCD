@@ -1,7 +1,8 @@
 package com.mnm.mnmpcd.Entity;
 import javax.persistence.*;
-@Entity
+@Data @AllArgsConstructor @NoArgsConstructor @Setter @Getter
 
+@Entity
 @Table(name = "client")
 public class Client {
 @Id 
@@ -21,7 +22,7 @@ private String email;
 @Column(name = "password")
 private String password;
 
-@Column(name = "gender")
+@Column(name = "gender",length =1)
 private String gender;
 
 @Column(name = "birthday")
