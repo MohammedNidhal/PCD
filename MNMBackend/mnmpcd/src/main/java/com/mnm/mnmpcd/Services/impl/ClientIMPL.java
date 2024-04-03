@@ -3,6 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
+import javax.servlet.http.HttpSession;
 
 import com.mnm.mnmpcd.DAO.ClientDAO;
 import com.mnm.mnmpcd.Entity.Client;
@@ -45,6 +46,7 @@ public class ClientIMPL implements ClientService {
             if (PwdIsRight){
                 Optional<Client> client=clientRepo.findOneByEmailAndPassword(loginDAO.getEmail(),encodedPassword());
                 if (client.isPresent()){
+                    session.setAttribute("user", client1); // Store user in session upon successful login
                     return new LoginResponse("Login Success",true);
                 }
                 else {

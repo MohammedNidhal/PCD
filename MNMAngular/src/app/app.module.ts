@@ -13,6 +13,20 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 import { MedicalDataComponent } from './medical-data/medical-data.component';
 import { SettingsComponent } from './settings/settings.component';
 
+//Adding modules for side navbar and icons 
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule } from '@angular/material/sidenav';
+import {MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule } from '@angular/material/menu';
+import {MatIconModule } from '@angular/material/icon';
+import {MatDividerModule } from '@angular/material/divider';
+import {MatListModule } from '@angular/material/list';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ProfileComponent } from './profile/profile.component';
+import { OurAdviseComponent } from './our-advise/our-advise.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,16 +37,26 @@ import { SettingsComponent } from './settings/settings.component';
     DashboardComponent,
     OrderHistoryComponent,
     MedicalDataComponent,
-    SettingsComponent
+    SettingsComponent,
+    ProfileComponent,
+    OurAdviseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, //For session control
+    BrowserAnimationsModule,// for the dashboard 
+    MatSidenavModule,// for the dashboard 
+    MatToolbarModule,// for the dashboard 
+    MatMenuModule,// for the dashboard 
+    MatIconModule,// for the dashboard 
+    MatListModule,// for the dashboard 
+    MatDividerModule// for the dashboard 
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
