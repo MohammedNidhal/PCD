@@ -40,6 +40,4 @@ private String Country;
 @Column(name = "Address")
 private String Address;
 
-
-
 }
