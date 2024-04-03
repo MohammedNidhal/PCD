@@ -1,5 +1,12 @@
 package com.mnm.mnmpcd.Entity;
 import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.Date; 
 @Data @AllArgsConstructor @NoArgsConstructor @Setter @Getter
 
 @Entity
@@ -34,10 +41,10 @@ private int postalCode;
 @Column(name = "city")
 private String city;
 
-@Column(name = "Country")
-private String Country;
+@Column(name = "country")
+private String country;
 
-@Column(name = "Address")
-private String Address;
+@Column(name = "address")
+private String address;
 
 }

@@ -1,8 +1,17 @@
 package com.mnm.mnmpcd.Services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import java.util.Optional;
+import org.springframework.stereotype.Service;
 
-public class ClientIMPL implements EmployeeService {
+import com.mnm.mnmpcd.DAO.ClientDAO;
+import com.mnm.mnmpcd.Entity.Client;
+import com.mnm.mnmpcd.Repo.ClientRepo;
+import com.mnm.mnmpcd.Response.LoginResponse;
+import com.mnm.mnmpcd.Services.ClientService;
+
+
+public class ClientIMPL implements ClientService {
     @Autowired
     private ClientRepo clientRepo ;
     @Autowired
@@ -10,7 +19,7 @@ public class ClientIMPL implements EmployeeService {
     @Override
     String addClient(ClientDAO clientDAO) {
     Client client =new Client(clientDAO.getIdClient(),
-        clientDAO.getFiirstName(),
+        clientDAO.getFirstName(),
         clientDAO.getLastName(),
         clientDAO.getEmail(),
         this.passwordEncoder.encode(clientDAO.getPassword()),
@@ -21,8 +30,8 @@ public class ClientIMPL implements EmployeeService {
         clientDAO.getCountry(),
         clientDAO.getAddress()
     );
-    ClientRepo.save(client);
-    return(client.getFiirstName());
+    clientRepo.save(client);
+    return(client.getFirstName());
     }
 
     @Override 
@@ -36,18 +45,18 @@ public class ClientIMPL implements EmployeeService {
             if (PwdIsRight){
                 Optional<Client> client=clientRepo.findOneByEmailAndPassword(loginDAO.getEmail(),encodedPassword());
                 if (client.isPresent()){
-                    return new LoginResponse("Login Success",true)
+                    return new LoginResponse("Login Success",true);
                 }
                 else {
-                    return new LoginResponse("Login Fail",false)
+                    return new LoginResponse("Login Fail",false);
                 }
             }
             else {
-                return new LoginResponse("Login Fail",false)
+                return new LoginResponse("Login Fail",false);
             }
         }
         else {
-            return new LoginResponse("Login Fail",false)
+            return new LoginResponse("Login Fail",false);
         }
     }
 }

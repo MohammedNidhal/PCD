@@ -1,4 +1,10 @@
 package com.mnm.mnmpcd.DAO;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Data @AllArgsConstructor @NoArgsConstructor @Setter @Getter
 public class LoginDAO {
 
@@ -11,6 +17,7 @@ public class LoginDAO {
     public LoginDAO(){
     }
     @Override
-    public toString() {
-        return ("LoginDAO [email=" + email + ", password=" + password +"]");
+    public String toString() {
+        return "LoginDAO [email=" + email + ", password=" + password + "]";
+    }
 }
