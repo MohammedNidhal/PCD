@@ -52,7 +52,7 @@ import { OurAdviseComponent } from './our-advise/our-advise.component';
     MatMenuModule,// for the dashboard 
     MatIconModule,// for the dashboard 
     MatListModule,// for the dashboard 
-    MatDividerModule// for the dashboard 
+    MatDividerModule,// for the dashboard 
   ],
   providers: [
     provideClientHydration(),

@@ -24,9 +24,8 @@ img {
     border-radius: 5px;
     margin: 0 8px;
 }
-
 .mat-list-item:hover {
-    background: #F9A26C;
+    text-decoration-color: #F9A26C;
 }
 
 .mat-list-item-content {
@@ -34,7 +33,7 @@ img {
     margin: 0 8px;
 }
 
-.mat-list-item-content:hover {
+.mat-icon:hover {
     background: #F9A26C;
 }
 
@@ -42,7 +41,9 @@ img {
     color: #325D79 !important;
     background: #F9A26C;
 }
-
+.mat-list-item-content:hover {
+    background: #F9A26C;
+}
 .list-item-active:hover {
     background: #F9A26C;
 }
@@ -53,4 +54,3 @@ img {
     font-weight: 100;
     letter-spacing: 1px;
 }
-

@@ -8,8 +8,8 @@ import { Component,OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit  {
   sideBarOpen=true;
 ngOnInit(){}
+
   sideBarToggler(){
     this.sideBarOpen=!this.sideBarOpen;
   }
-
 }
