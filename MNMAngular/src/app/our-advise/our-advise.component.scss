@@ -1,0 +1,23 @@
+.page{
+    color: aliceblue;
+    padding:0 1rem;
+    background: #F5F5F5;
+    &__box{
+        min-height: 160px;
+        margin: 0 -1 rem;
+        font-size: 36px;
+    }
+    &__content{
+        min-height: calc(100vh - 178px);
+        border-radius: 10px;
+        margin-top: 0 rem;
+        background: white;
+        color:black;
+        font-size: 2rem;
+        &-data{
+            top:0%;
+            left:50%;
+            transform:translate(-50%,-50%)
+        }
+    }
+}
