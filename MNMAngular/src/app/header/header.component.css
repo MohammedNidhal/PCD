@@ -32,3 +32,6 @@ button{
         width : 160px;
     }
 }
+.mat-icon-button{
+    background-color: aliceblue;
+}
