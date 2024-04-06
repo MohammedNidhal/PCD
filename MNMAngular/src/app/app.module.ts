@@ -24,6 +24,7 @@ import {MatListModule } from '@angular/material/list';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProfileComponent } from './profile/profile.component';
 import { OurAdviseComponent } from './our-advise/our-advise.component';
+import { MainFooterComponent } from './main-footer/main-footer.component';
 
 
 
@@ -39,7 +40,8 @@ import { OurAdviseComponent } from './our-advise/our-advise.component';
     MedicalDataComponent,
     SettingsComponent,
     ProfileComponent,
-    OurAdviseComponent
+    OurAdviseComponent,
+    MainFooterComponent
   ],
   imports: [
     BrowserModule,
