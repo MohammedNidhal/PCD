@@ -1,0 +1,92 @@
+.container {
+    background-color: white;
+    width: 400px; /* Adjust width as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  form {
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .remember-me,
+  .forget-password {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .forget-password a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .forget-password a:hover {
+    text-decoration: underline;
+  }
+  
+  .register-link {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .register-link a {
+    color: #F9A26C;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  .full-width {
+    width: 100%;
+    background-color: #F9A26C;
+  }
+  .already-have-account a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .already-have-account a:hover {
+    text-decoration: underline;
+  }
+  h2{
+    text-align: center;
+  }
+  

@@ -4,7 +4,7 @@ import { SignupService } from '../services/signup.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
   step: number = 1;
@@ -14,7 +14,12 @@ export class SignupComponent {
   constructor(private signupService: SignupService) { }
 
   nextStep() {
-    this.step++;
+    if (this.step === 1) {
+      // Validation can be added here if necessary
+      this.step++;
+    } else if (this.step === 2) {
+      this.step--;
+    }
   }
 
   submit() {
