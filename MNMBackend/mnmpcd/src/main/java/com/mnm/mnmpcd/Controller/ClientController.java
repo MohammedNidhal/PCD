@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 
@@ -21,13 +22,30 @@ public class ClientController {
 
     @Autowired
     private ClientService clientService;
+    private ClientRepo clientRepo;
+    @GetMapping("/clients")
+    public List<Client> getAllClients(){
+        return(clientRepo.findAll());
+    }
+    //Create client rest api /signUP
+    
+
+
+
+
+
+
+
+
+
+
 
     @PostMapping(path="/save")
     public String saveClient(@RequestBody ClientDAO clientDAO) {
         String id = clientService.addClient(clientDAO);
         return id; // Removed unnecessary parenthesis
     }
-
+    private
     @PostMapping(path="/login")
     public ResponseEntity<LoginResponse> loginClient(@RequestBody LoginDAO loginDAO, HttpSession session) {
         LoginResponse loginResponse = clientService.loginClient(loginDAO,session);

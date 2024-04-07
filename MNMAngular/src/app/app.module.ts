@@ -25,6 +25,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ProfileComponent } from './profile/profile.component';
 import { OurAdviseComponent } from './our-advise/our-advise.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
+import { ClientListComponent } from './client-list/client-list.component';
 
 
 
@@ -41,7 +42,8 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
     SettingsComponent,
     ProfileComponent,
     OurAdviseComponent,
-    MainFooterComponent
+    MainFooterComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<h2> Client List</h2>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th> Name</th>
+        <th> Email </th>
+        <th> Address </th>
+    </tr>
+</thead>
+<tbody>
+    @for (client of clients; track client) {
+        <td> {{client.firstName}} {{client.lastName}}</td>
+        <td> {{client.email}}</td>
+        <td> {{client.address}}</td>
+    }
+</tbody>
+</table>

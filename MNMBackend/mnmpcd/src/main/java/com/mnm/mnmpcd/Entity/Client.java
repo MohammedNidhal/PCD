@@ -29,7 +29,7 @@ private String email;
 @Column(name = "password")
 private String password;
 
-@Column(name = "gender",length =1)
+@Column(name = "gender")
 private String gender;
 
 @Column(name = "birthday")
