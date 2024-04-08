@@ -1,23 +1,47 @@
-.page{
-    color: black;
-    padding:0 1rem;
-    background: #F5F5F5;
-    &__box{
-        min-height: 160px;
-        margin: 0 -1 rem;
-        font-size: 36px;
-    }
-    &__content{
-        min-height: calc(100vh - 178px);
-        border-radius: 10px;
-        margin-top: 0 rem;
-        background: white;
-        color:black;
-        font-size: 2rem;
-        &-data{
-            top:0%;
-            left:50%;
-            transform:translate(-50%,-50%)
-        }
-    }
+.container-fluid.page {
+    background-color: #ffffff; /* White background */
+    padding: 0 1rem; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin-top: auto;
+}
+
+.page__content {
+    width: 80%; /* Adjust width as needed */
+    border-radius: 10px;
+    background-color: #ffffff; /* White background */
+    color: #325D79; /* Blue color */
+    font-size: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    overflow: auto; /* Enable scrolling if content overflows */
+}
+
+.page__content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.page__content th, .page__content td {
+    border-top: 1px solid #cccccc; /* Light gray border */
+    border-bottom: 1px solid #cccccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.page__content th {
+    background-color: #325D79; /* Blue background for table header */
+    color: #ffffff; /* White text color for table header */
+}
+
+.page__content tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+.page__content td:first-child {
+    border-left: none; /* Hide left border for first column */
+}
+
+.page__content td:last-child {
+    border-right: none; /* Hide right border for last column */
 }

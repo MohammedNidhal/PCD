@@ -1,23 +1,77 @@
-.page{
-    color: Black;
-    padding:0 1rem;
-    background: #F5F5F5;
-    &__box{
-        min-height: 160px;
-        margin: 0 -1 rem;
-        font-size: 36px;
+
+  .container-fluid.page {
+    color: white;
+    padding: 0 -11rem;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh;
+    margin-top: auto;
+  
+    &__box {
+      min-height: 120px;
+      margin: 0 -1rem;
+      font-size: 36px;
     }
-    &__content{
-        min-height: calc(100vh - 178px);
-        border-radius: 10px;
-        margin-top: 0 rem;
-        background: white;
-        color:black;
-        font-size: 2rem;
-        &-data{
-            top:0%;
-            left:50%;
-            transform:translate(-50%,-50%)
-        }
+  
+    &__content {
+      min-height: calc(100vh - 160px);
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white; /* Set background color for the content area */
+      color: black;
+      font-size: 2rem;
+  
+      &-data {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
+  }
+.bottom-container {
+    margin-top: 60px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
+.box {
+    flex: 1; /* Distribute space equally among the boxes */
+    border: 1px solid black; /* Optional: Just for visualization */
+    margin: 5px; /* Optional: Just for spacing */
+  }
+recommanded-products, .recent-purchases {
+    width: 50%; 
+    box-sizing: border-box;
+}
+  .product-item {
+    width: 30%; /* Adjust as needed */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-details {
+    margin-top: 10px;
+  }
+  
+  .product-details p {
+    margin: 5px 0;
+  }
+  
+  .product-details .name {
+    font-weight: bold;
+  }
+  
+  .product-details .price {
+    color: green;
+  }
+  

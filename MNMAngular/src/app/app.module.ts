@@ -26,7 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { OurAdviseComponent } from './our-advise/our-advise.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ClientListComponent } from './client-list/client-list.component';
-
+import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
@@ -57,6 +57,7 @@ import { ClientListComponent } from './client-list/client-list.component';
     MatIconModule,// for the dashboard 
     MatListModule,// for the dashboard 
     MatDividerModule,// for the dashboard 
+    ChartModule 
   ],
   providers: [
     provideClientHydration(),
