@@ -1,41 +1,35 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Client } from '../client';
-
+import { ClientService } from '../services/client.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.component.html',
-  styleUrl: './client-list.component.css'
+  styleUrls: ['./client-list.component.css'] // Fixed typo here
 })
 export class ClientListComponent implements OnInit {
-  clients!: Client[];
-  constructor(){}
-  ngOnInit():void {
-  this.clients = [{
-    "idClient":1,
-      "firstName": "John",
-      "lastName": "Simba",
-      "email": "sim@gmail.com",
-      "password":"password",
-      "gender":"Male",
-      "birthday":new Date(),
-      "postalCode":1240,
-      "city":"Town",
-      "country":"UAE",
-      "address":"Dubai,UAE"
-    },
-    {
-      "idClient":2,
-        "firstName": "hes",
-        "lastName": "ishere",
-        "email": "messi@gmail.com",
-        "password":"psjssassword",
-        "gender":"Female",
-        "birthday":new Date(),
-        "postalCode":111,
-        "city":"Jiji",
-        "country":"Feriana",
-        "address":",UAE"
-      }];
-  }  
+  clients: Client[] = []; 
+  constructor(private clientService: ClientService, private router: Router) {}
+  
+  ngOnInit(): void {
+    this.getClients();
+  }
+
+  private getClients() {
+    this.clientService.getClientsList().subscribe(data => {
+      this.clients = data;
+    });
+  }
+
+  updateClient(id: number) {
+    this.router.navigate(['/Settings', id]);
+  }
+
+  deleteClient(id: number) {
+    this.clientService.deleteClient(id).subscribe(data => {
+      console.log(data);
+      this.getClients(); // Refresh client list after deletion
+    });
+  }
 }

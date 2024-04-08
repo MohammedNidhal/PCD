@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { SignupService } from '../services/signup.service';
-
+import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../services/client.service';
+import { Client } from '../client';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   step: number = 1;
-  userData: any = {};
   medicalData: any = {};
-
-  constructor(private signupService: SignupService) { }
-
+  client :Client=new Client();
+  
+  constructor(private clientService: ClientService) { }
+  ngOnInit() :void {}
   nextStep() {
     if (this.step === 1) {
       // Validation can be added here if necessary
@@ -21,17 +21,16 @@ export class SignupComponent {
       this.step--;
     }
   }
-
+  saveClient(){
+    this.clientService.createClient(this.client).subscribe(data=>{
+    console.log(data);
+  },
+    error=>console.log(error));
+  }
+    
+  }
   submit() {
-    const userDataAndMedicalData = { ...this.userData, ...this.medicalData };
-    this.signupService.signup(userDataAndMedicalData)
-      .subscribe(
-        data => {
-          // Handle successful signup
-        },
-        error => {
-          // Handle signup error
-        }
-      );
+    console.log(this.client);
+    console.log(this.medicalData);
   }
 }
