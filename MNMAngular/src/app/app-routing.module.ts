@@ -7,6 +7,7 @@ import{OrderHistoryComponent} from './order-history/order-history.component';
 import{SidenavComponent} from './sidenav/sidenav.component';
 import{SettingsComponent} from './settings/settings.component';
 import{OurAdviseComponent} from './our-advise/our-advise.component';
+import{LoginComponent} from './login/login.component';
 const routes: Routes = [
   {path: 'Dashboard', component:DashboardComponent},
   {path: 'Header', component:HeaderComponent},
@@ -14,8 +15,8 @@ const routes: Routes = [
   {path: 'OrderHistory', component:OrderHistoryComponent},
   {path: 'Sidenav', component:SidenavComponent},
   {path: 'Settings', component:SettingsComponent},
-  {path: 'OurAdvise', component:OurAdviseComponent}
-
+  {path: 'OurAdvise', component:OurAdviseComponent},
+  {path: 'login', component:LoginComponent}
 ];
 
 @NgModule({

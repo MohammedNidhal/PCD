@@ -1,9 +1,13 @@
+footer{
+    flex-shrink: 0;
+}
 .newsletter{
     background:  #f3f3f3;
     display:flex ;
     align-items: center;
     justify-content: center;
     flex-wrap:wrap;
+    margin-top: 130px;
 }
 .newsletter h2{
     display:flex;
