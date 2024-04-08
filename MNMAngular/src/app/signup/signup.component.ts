@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../services/client.service';
 import { Client } from '../client';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,8 +11,11 @@ export class SignupComponent implements OnInit {
   step: number = 1;
   medicalData: any = {};
   client :Client=new Client();
-  
-  constructor(private clientService: ClientService) { }
+
+
+
+
+  constructor(private clientService: ClientService,  private router : Router){ }
   ngOnInit() :void {}
   nextStep() {
     if (this.step === 1) {
@@ -24,11 +28,14 @@ export class SignupComponent implements OnInit {
   saveClient(){
     this.clientService.createClient(this.client).subscribe(data=>{
     console.log(data);
+    this.goToClientList();
   },
     error=>console.log(error));
   }
-    
-  }
+    goToClientList(){
+      this.router.navigate(['clients']);
+    }
+
   submit() {
     console.log(this.client);
     console.log(this.medicalData);

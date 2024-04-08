@@ -12,6 +12,10 @@
         <td> {{client.firstName}} {{client.lastName}}</td>
         <td> {{client.email}}</td>
         <td> {{client.address}}</td>
+        <td> 
+            <button (click)="updateClient(client.idClient)"> Update</button>
+            <button (click)="deleteClient(client.idClient)"> Delete</button>
+        </td> 
     }
 </tbody>
 </table>

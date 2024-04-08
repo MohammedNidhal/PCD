@@ -29,7 +29,7 @@ export class ClientListComponent implements OnInit {
   deleteClient(id: number) {
     this.clientService.deleteClient(id).subscribe(data => {
       console.log(data);
-      this.getClients(); // Refresh client list after deletion
+      this.getClients(); 
     });
   }
 }
