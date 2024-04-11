@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from '../client';
 import { ClientService } from '../services/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { color } from 'highcharts';
 
 @Component({
   selector: 'app-settings',
@@ -12,7 +11,7 @@ import { color } from 'highcharts';
 export class SettingsComponent implements OnInit {
   id!: number;
   client: Client = new Client();
-  showContent: number | null = null;
+  showContent: number =1;
   medicalData: any = {};
   constructor(
     private clientService: ClientService,

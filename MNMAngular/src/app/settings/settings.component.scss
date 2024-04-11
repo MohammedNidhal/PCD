@@ -1,57 +1,93 @@
-body {
-    margin: 0; /* Remove default margin */
-    background-color: white; /* Set background color for the entire page */
-  }
-.container-fluid.page {
-    color: white;
-    padding: 0 1rem; /* Adjusted padding */
-    display: flex;
-    flex-direction: column; /* Added */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    height: calc(100vh - px); /* Subtracting the height of the toolbar */
-    margin-top: 64px; /* Added */
-    background-color: aliceblue;
-  
-    &__box {
-      min-height: 120px;
-      margin: 0 1rem; /* Adjusted margin */
-      font-size: 36px;
-    }
-  
-    &__content {
-      min-height: calc(100vh - 160px);
-      border-radius: 10px;
-      margin-top: -2rem;
-      background: white; /* Set background color for the content area */
-      color: black;
-      font-size: 2rem;
-  
-      &-data {
-        position: relative; /* Added */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
+.container {
+  width: 60%;
+  height: 60vh; /* vh: viewport height */
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: white; /* White background */
+  padding: 20px; /* Add some padding for spacing */
+  margin-top: 20px;
 }
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  background-color: white;
+  color: #325D79;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-container button:hover {
+  background-color: #325D79; 
+  color: #fff;
+}
+
+.button-container button.active {
+  background-color: #325D79;
+  color: #fff;
+}
+
+.content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: black;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="date"] {
+  width: calc(100% - 22px);
+}
+
+button[type="submit"] {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff9900;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.column:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .form-container {
-    display: flex;
-  }
-  
-  .column {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .column:last-child {
-    margin-right: 0;
-  }
-  
-  .full-width {
-    width: 100%;
-  }
-.content1{
-    color: white;
-    background-color: black;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
