@@ -1,77 +1,108 @@
+.container-fluid.page {
+  color: white;
+  padding: 0 1rem; /* Adjusted padding */
+  display: flex;
+  flex-direction: column; /* Added */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: calc(100vh - -800px); /* Subtracting the height of the toolbar */
+  margin-top: 64px; /* Added */
 
-  .container-fluid.page {
-    color: white;
-    padding: 0 -11rem;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    height: 100vh;
-    margin-top: auto;
-  
-    &__box {
-      min-height: 120px;
-      margin: 0 -1rem;
-      font-size: 36px;
-    }
-  
-    &__content {
-      min-height: calc(100vh - 160px);
-      border-radius: 10px;
-      margin-top: -2rem;
-      background: white; /* Set background color for the content area */
-      color: black;
-      font-size: 2rem;
-  
-      &-data {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+  &__box {
+    min-height: 120px;
+    margin: 0 1rem; /* Adjusted margin */
+    font-size: 36px;
+  }
+
+  &__content {
+    min-height: calc(100vh - 160px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white; /* Set background color for the content area */
+    color: black;
+    font-size: 2rem;
+
+    &-data {
+      position: relative; /* Added */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
-.bottom-container {
+
+  .bottom-container { /* Corrected class name */
     margin-top: 60px;
     background-color: #ddd;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-}
-.box {
+    padding: 10px; /* Added */
+  }
+
+  .box {
     flex: 1; /* Distribute space equally among the boxes */
     border: 1px solid black; /* Optional: Just for visualization */
     margin: 5px; /* Optional: Just for spacing */
   }
-recommanded-products, .recent-purchases {
-    width: 50%; 
+
+  .recommended-products, .recent-purchases { 
+    width: 100%; 
     box-sizing: border-box;
-}
+  }
+
   .product-item {
-    width: 30%; /* Adjust as needed */
+    width: 100%; 
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     box-sizing: border-box;
+    margin-top: 10px;
   }
-  
+
   .product-item img {
     width: 100%;
     height: auto;
+    border-radius: 5px; 
   }
-  
+
   .product-details {
     margin-top: 10px;
   }
-  
+
   .product-details p {
     margin: 5px 0;
   }
-  
+
   .product-details .name {
     font-weight: bold;
   }
-  
+
   .product-details .price {
     color: green;
   }
-  
+}
+.page__content {
+  width: 100%; /* Ensure it fills the width of its parent */
+}
+
+
+
+.line {
+  width: 70%; /* Ensure it fills the width of its parent */
+}
+.bottom-container {
+  margin-top: 60px;
+  background-color: #ddd;
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: flex-start; /* Align items to the start of the cross axis */
+  flex-wrap: nowrap; /* Prevent wrapping to keep them in the same line */
+}
+
+.box {
+  flex: 1; /* Distribute space equally among the boxes */
+  border: 1px solid black; /* Optional: Just for visualization */
+  margin: 5px; /* Optional: Just for spacing */
+}
+

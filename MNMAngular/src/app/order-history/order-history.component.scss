@@ -24,19 +24,19 @@
 }
 
 .page__content th, .page__content td {
-    border-top: 1px solid #cccccc; /* Light gray border */
+    border-top: 1px solid #cccccc; /* Light  border */
     border-bottom: 1px solid #cccccc;
     padding: 8px;
     text-align: left;
 }
 
 .page__content th {
-    background-color: #325D79; /* Blue background for table header */
+    background-color: #325D79; /*  background for table header */
     color: #ffffff; /* White text color for table header */
 }
 
 .page__content tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Light gray background for even rows */
+    background-color: #f2f2f2; /* Light  background for even rows */
 }
 .page__content td:first-child {
     border-left: none; /* Hide left border for first column */

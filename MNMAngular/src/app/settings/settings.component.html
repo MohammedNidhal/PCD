@@ -2,8 +2,137 @@
     <div class="page__box p-3 mt-2"> Settings</div>
     <div class="page__content shadow p-3 position-relative">
         <div class="page__content-data position-absloute">
-        Settings content
+            <button (click)="showContent = 1">Edit Profile1</button>
+            <button (click)="showContent = 2">Medical Data</button>
+            <button (click)="showContent = 3">Security</button>
+            
+            <div *ngIf="showContent === 1" id="content1" class="content"><form  class="form-container">
+                <div class="column">
+                  <div>
+                    <label for="name">First Name:</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="client.firstName" required>
+                  </div>
+                  <div>
+                    <label for="name">Last Name:</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="client.lastName" required>
+                  </div>
+                  <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="client.email" required>
+                  </div>
+                  <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="client.password" required>
+                  </div>
+                  <div>
+                    <label for="password">Confirm Password:</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="client.password" required>
+                  </div>
+                </div>
+                <div class="column">
+                  <div>
+                    <label for="birthday">Date of birth:</label>
+                    <input type="date" id="birthday" name="birthday" [(ngModel)]="client.birthday" required>
+                  </div>
+                  <div>
+                    <label for="gender">Gender:</label>
+                    <select name="gender" [(ngModel)]="client.gender">
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" [(ngModel)]="client.address" required>
+                  </div>
+                  <div>
+                    <label for="address">City:</label>
+                    <input type="text" id="address" name="address" [(ngModel)]="client.city" required>
+                  </div>
+                  <div>
+                    <label for="address">Postal Code:</label>
+                    <input type="text" id="address" name="address" [(ngModel)]="client.postalCode" required>
+                  </div>
+                  <div>
+                    <label for="address">Country:</label>
+                    <input type="text" id="address" name="address" [(ngModel)]="client.country" required>
+                  </div>
+                </div>
+                <button type="submit" class="full-width">Next</button>
+              </form>
+              </div>
+            <div *ngIf="showContent === 2" id="content2" class="content"><form  class="form-container">
+                <div class="column">
+                  <div>
+                    <label for="sleepHours">Sleep Hours:</label>
+                    <input type="text" id="sleepHours" name="sleepHours" [(ngModel)]="medicalData.sleepHours" required>
+                  </div>
+                  <div>
+                    <label for="mass">Mass:</label>
+                    <input type="text" id="mass" name="mass" [(ngModel)]="medicalData.mass" required>
+                  </div>
+                  <div>
+                    <label for="height">Height:</label>
+                    <input type="text" id="height" name="height" [(ngModel)]="medicalData.height" required>
+                  </div>
+                  <div>
+                    <label for="bloodType">Blood Type:</label>
+                    <select name="bloodType" [(ngModel)]="medicalData.bloodType">
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column">
+                  <div>
+                    <label for="foodType">Food Type:</label>
+                    <select name="foodType" [(ngModel)]="medicalData.foodType">
+                      <option value="vegan">Vegan</option>
+                      <option value="vegetarian">Vegetarian</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="bloodsugar">Blood Sugar:</label>
+                    <select name="bloodsugar" [(ngModel)]="medicalData.bloodsugar">
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="foodallergies">Food Allergies:</label>
+                    <select name="foodallergies" [(ngModel)]="medicalData.foodallergies">
+                      <option value="gluten">Gluten</option>
+                      <option value="nuts">Nuts</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="medicalconditions">Medical Conditions:</label>
+                    <select name="medicalconditions" [(ngModel)]="medicalData.medicalconditions">
+                      <option value="asthma">Asthma</option>
+                      <option value="diabetes">Diabetes</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="register">Update</button>
+              </form>
+              </div>
+            <div *ngIf="showContent === 3" id="content3" class="content"><form  class="form-container">
+                <div>
+                  <label for="oldPassword">Old Password:</label>
+                  <input type="password" id="oldPassword" name="oldPassword" [(ngModel)]="client.password" required>
+                </div>
+                <div>
+                  <label for="newPassword">New Password:</label>
+                  <input type="password" id="newPassword" name="newPassword" [(ngModel)]="client.password" required>
+                </div>
+                <div>
+                  <label for="confirmPassword">Confirm New Password:</label>
+                  <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="client.password" required>
+                </div>
+                <button type="submit" class="change-password">Change Password</button>
+              </form>
+              </div>
+            
         </div>
     </div>
 </div>
-just put the interface of personal data and medical  and the update will work automatically inchallah 
