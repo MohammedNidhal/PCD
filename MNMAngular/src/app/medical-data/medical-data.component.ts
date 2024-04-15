@@ -6,12 +6,12 @@ import { Chart } from 'angular-highcharts';
   styleUrl: './medical-data.component.scss'
 })
 export class MedicalDataComponent {
-  lineChart = new Chart({
+  lineChart1 = new Chart({
     chart: {
       type: 'line'
     },
     title: {
-      text: 'Linechart'
+      text: 'Line Chart 1'
     },
     credits: {
       enabled: false
@@ -19,38 +19,44 @@ export class MedicalDataComponent {
     series: [
       {
         name: 'Line 1',
-        data: [1, 2, 3]
+        data: [5, 6, 5.5, 8, 7.5]
       } as any
     ]
-  })
-    pieChart =new Chart({
-      chart: {
-        type: 'pie',
-        plotShadow:false,
-      },
-      title: {
-        text: 'Pie chart',
-        floating: true
-      },
-      credits: {
-        enabled: false
-      },
-      plotOptions: {
-        pie:{
-          innerSize :'99%' , 
-          borderWidth:10,
-          borderColor:'',
-          slicedOffset: 10,
-          dataLabels:{
-            connectorWidth:0,
-          }
+  });
 
-        } 
-      },
-      series: [
-        {type: 'pie',
-          data: [{name: 'Category 1',y:1,color:""} , {name: 'Category 2',y:2,color:""} , {name: 'Category 3',y:3,color:""} ,{name: 'Category 4',y:4,color:""} ]
-        }
-      ]
-    })
+  lineChart2 = new Chart({
+    chart: {
+      type: 'line'
+    },
+    title: {
+      text: 'Line Chart 2'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [
+      {
+        name: 'Line 2',
+        data: [3, 4, 4.5, 6, 5.5]
+      } as any
+    ]
+  });
+
+  barChart = new Chart({
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: 'Bar Chart'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [
+      {
+        name: 'Bar Series',
+        data: [25, 50, 75, 100]
+      } as any
+    ]
+  });
 }

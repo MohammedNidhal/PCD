@@ -1,108 +1,44 @@
-.container-fluid.page {
-  color: white;
-  padding: 0 1rem; /* Adjusted padding */
+.container {
   display: flex;
-  flex-direction: column; /* Added */
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: calc(100vh - -800px); /* Subtracting the height of the toolbar */
-  margin-top: 64px; /* Added */
-
-  &__box {
-    min-height: 120px;
-    margin: 0 1rem; /* Adjusted margin */
-    font-size: 36px;
-  }
-
-  &__content {
-    min-height: calc(100vh - 160px);
-    border-radius: 10px;
-    margin-top: -2rem;
-    background: white; /* Set background color for the content area */
-    color: black;
-    font-size: 2rem;
-
-    &-data {
-      position: relative; /* Added */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .bottom-container { /* Corrected class name */
-    margin-top: 60px;
-    background-color: #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 10px; /* Added */
-  }
-
-  .box {
-    flex: 1; /* Distribute space equally among the boxes */
-    border: 1px solid black; /* Optional: Just for visualization */
-    margin: 5px; /* Optional: Just for spacing */
-  }
-
-  .recommended-products, .recent-purchases { 
-    width: 100%; 
-    box-sizing: border-box;
-  }
-
-  .product-item {
-    width: 100%; 
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-top: 10px;
-  }
-
-  .product-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px; 
-  }
-
-  .product-details {
-    margin-top: 10px;
-  }
-
-  .product-details p {
-    margin: 5px 0;
-  }
-
-  .product-details .name {
-    font-weight: bold;
-  }
-
-  .product-details .price {
-    color: green;
-  }
-}
-.page__content {
-  width: 100%; /* Ensure it fills the width of its parent */
+  flex-direction: column;
 }
 
-
+.top-container {
+  display: flex;
+}
 
 .line {
-  width: 70%; /* Ensure it fills the width of its parent */
+  flex: 1;
+  height: 300px;
 }
+
 .bottom-container {
-  margin-top: 60px;
-  background-color: #ddd;
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Distribute items evenly along the main axis */
-  align-items: flex-start; /* Align items to the start of the cross axis */
-  flex-wrap: nowrap; /* Prevent wrapping to keep them in the same line */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .box {
-  flex: 1; /* Distribute space equally among the boxes */
-  border: 1px solid black; /* Optional: Just for visualization */
-  margin: 5px; /* Optional: Just for spacing */
+  flex: 1;
 }
 
+.box > div {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.product-details {
+  flex: 1;
+}

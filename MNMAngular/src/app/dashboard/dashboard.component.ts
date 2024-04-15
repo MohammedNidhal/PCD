@@ -11,7 +11,7 @@ export class DashboardComponent {
       type: 'line'
     },
     title: {
-      text: 'Linechart'
+      text: 'Sleep Hours'
     },
     credits: {
       enabled: false
@@ -19,7 +19,7 @@ export class DashboardComponent {
     series: [
       {
         name: 'Line 1',
-        data: [1, 2, 3]
+        data: [5, 6, 5.5,8,7.5]
       } as any
     ]
   })
@@ -49,7 +49,7 @@ export class DashboardComponent {
       },
       series: [
         {type: 'pie',
-          data: [{name: 'Category 1',y:1,color:""} , {name: 'Category 2',y:2,color:""} , {name: 'Category 3',y:3,color:""} ,{name: 'Category 4',y:4,color:""} ]
+          data: [{name: 'Category 1',y:1,color:"#325D79"} , {name: 'Category 2',y:2,color:"#4BAB1D"} , {name: 'Category 3',y:3,color:"#F9A26C"} ,{name: 'Category 4',y:4,color:"#B1B1B1"} ]
         }
       ]
     })

@@ -1,23 +1,51 @@
-.page{
-    color: black;
-    padding:0 1rem;
-    background: #F5F5F5;
-    &__box{
-        min-height: 160px;
-        margin: 0 -1 rem;
-        font-size: 36px;
-    }
-    &__content{
-        min-height: calc(100vh - 178px);
-        border-radius: 10px;
-        margin-top: 0 rem;
-        background: white;
-        color:black;
-        font-size: 2rem;
-        &-data{
-            top:0%;
-            left:50%;
-            transform:translate(-50%,-50%)
-        }
-    }
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.top-container {
+    display: flex;
+}
+
+.line {
+    flex: 1;
+    /* Assuming the line chart has a fixed height */
+    height: 300px;
+    border: 1px solid transparent; /* Set border color to transparent */
+    border-radius: 5px; /* Add rounded corners */
+    margin-right: 20px; /* Add some space between the charts */
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.box {
+    flex: 1;
+}
+
+.box > div {
+    border: 1px solid transparent; /* Set border color to transparent */
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.product-details {
+    flex: 1;
 }
