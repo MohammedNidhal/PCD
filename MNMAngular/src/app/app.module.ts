@@ -27,6 +27,7 @@ import { OurAdviseComponent } from './our-advise/our-advise.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ChartModule } from 'angular-highcharts';
+import { DeliveryTrackOrderComponent } from './delivery-track-order/delivery-track-order.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ChartModule } from 'angular-highcharts';
     ProfileComponent,
     OurAdviseComponent,
     MainFooterComponent,
-    ClientListComponent
+    ClientListComponent,
+    DeliveryTrackOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -63,13 +63,13 @@ hr {
     flex-wrap:wrap;
     padding:0 30px;
 }
-.links{
+.links , button{
 margin: 10px 0;
 }
-.links ul{
+.links ul ,button{
     margin: 10px 0;
     }
-.links li{
+.links li, button {
         list-style: none;
         margin: 4px 0;
     }
