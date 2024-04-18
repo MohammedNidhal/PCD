@@ -1,33 +1,54 @@
-mat-toolbar{
+mat-toolbar {
     position: sticky;
-    top:0;
-    z-index :100;
-    background:  #325D79;
-    color:white
+    top: 0;
+    z-index: 100;
+    background: #325D79;
+    color: white;
 }
-ul{
-    li{
-        list-style:none;
+
+ul {
+    li {
+        list-style: none;
     }
 }
-button{
-    border:0;
-    outline:none;
+
+button, a {
+    border: 0;
+    outline: none;
     background: transparent;
+    color: white;
 }
-.user{
+
+.user-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right */
+    flex: 1; /* Take up remaining space */
+}
+
+.user {
     font-size: 14px;
-    position: fixed; 
-    top: 20px; 
-    right: 20px;
-
+    margin-left: 20px; /* Add space between buttons */
 }
 
-::ng-deep{
-    .mat-menu-content{
-        width : 160px;
+::ng-deep {
+    .mat-menu-content {
+        width: 160px;
+    }
+
+    .mat-menu-item {
+        color: white;
     }
 }
-.mat-icon-button{
+
+.mat-icon-button {
     background-color: aliceblue;
+}
+.logout-button {
+    background-color: white;
+    color: black;
+}
+
+.logout-button mat-icon {
+    color: black;
 }

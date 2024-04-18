@@ -1,32 +1,42 @@
-<div class="container-fluid page">
-    <div class="page__content">
-      <form (ngSubmit)="submitForm()">
-        <table>
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Collected</th>
-              <th>Shipping</th>
-              <th>Shipped</th>
-              <th>Delivered</th>
-              <th>Money Received</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let order of orders">
-              <td>{{ order.orderId }}</td>
-              <td><input type="checkbox" [(ngModel)]="order.collected" name="collected"></td>
-              <td><input type="checkbox" [(ngModel)]="order.shipping" name="shipping"></td>
-              <td><input type="checkbox" [(ngModel)]="order.shipped" name="shipped"></td>
-              <td><input type="checkbox" [(ngModel)]="order.delivered" name="delivered"></td>
-              <td><input type="checkbox" [(ngModel)]="order.moneyReceived" name="moneyReceived"></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="button-container">
-            <button type="submit">Submit</button>
+<div class="container-center">
+    <div class="container-left">
+        <div class="page__content">
+            <form (ngSubmit)="submitForm()">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Collected</th>
+                            <th>Shipping</th>
+                            <th>Shipped</th>
+                            <th>Delivered</th>
+                            <th>Money Received</th>
+                            <th>Confirmation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders" (mouseenter)="showDetails(order)" (mouseleave)="hideDetails()">
+                            <td>{{ order.orderId }}</td>
+                            <td><input type="checkbox" [(ngModel)]="order.collected" name="collected"></td>
+                            <td><input type="checkbox" [(ngModel)]="order.shipping" name="shipping"></td>
+                            <td><input type="checkbox" [(ngModel)]="order.shipped" name="shipped"></td>
+                            <td><input type="checkbox" [(ngModel)]="order.delivered" name="delivered"></td>
+                            <td><input type="checkbox" [(ngModel)]="order.moneyReceived" name="moneyReceived"></td>
+                            <td>
+                                <div class="button-container">
+                                    <button type="submit">Submit</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  
+
+    <div class="container-right">
+        <div *ngIf="selectedOrder">
+            <div [attr.colspan]="7">{{ selectedOrder.details }}</div>
+        </div>
+    </div>
+</div>

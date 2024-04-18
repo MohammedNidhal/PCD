@@ -8,6 +8,8 @@ import{SidenavComponent} from './sidenav/sidenav.component';
 import{SettingsComponent} from './settings/settings.component';
 import{OurAdviseComponent} from './our-advise/our-advise.component';
 import{LoginComponent} from './login/login.component';
+import{NotificationsComponent} from './notifications/notifications.component';
+
 const routes: Routes = [
   {path: 'Dashboard', component:DashboardComponent},
   {path: 'Header', component:HeaderComponent},
@@ -16,7 +18,8 @@ const routes: Routes = [
   {path: 'Sidenav', component:SidenavComponent},
   {path: 'Settings', component:SettingsComponent},
   {path: 'OurAdvise', component:OurAdviseComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'notifications', component:NotificationsComponent}
 ];
 
 @NgModule({

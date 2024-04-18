@@ -1,0 +1,22 @@
+.container {
+    width: 90%;
+    border: none;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+.notification-details {
+    flex: 1;
+}
+
+.name, .description {
+    margin: 0;
+    color: #325D79; /* Set text color to blue */
+}

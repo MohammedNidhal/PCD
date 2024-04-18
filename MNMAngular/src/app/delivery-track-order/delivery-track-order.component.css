@@ -1,21 +1,31 @@
-.container-fluid.page {
-    background-color: #ffffff; /* White background */
-    padding: 0 1rem; /* Adjust padding as needed */
+.container-center {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh;
-    margin-top: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-left {
+    width: 60%; /* Reduced width */
+    margin-right: 20px; /* Add spacing between containers */
+}
+
+.container-right {
+    width: 30%;
+    margin-left: 20px; /* Add spacing between containers */
+    background-color: #ffffff;
+    color: #325D79;
+    font-size: 1.6rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 
 .page__content {
-    width: 80%; /* Adjust width as needed */
     border-radius: 10px;
-    background-color: #ffffff; /* White background */
-    color: #325D79; /* Blue color */
+    background-color: #ffffff;
+    color: #325D79;
     font-size: 1.6rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    overflow: auto; /* Enable scrolling if content overflows */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 
 .page__content table {
@@ -23,38 +33,39 @@
     border-collapse: collapse;
 }
 
-.page__content th, .page__content td {
-    border-top: 1px solid #cccccc; /* Light border */
+.page__content th,
+.page__content td {
+    border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
     padding: 8px;
     text-align: left;
 }
 
 .page__content th {
-    background-color: #325D79; /* Background for table header */
-    color: #ffffff; /* White text color for table header */
+    background-color: #325D79;
+    color: #ffffff;
 }
 
 .page__content tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Light background for even rows */
+    background-color: #f2f2f2;
 }
 
 .page__content td:first-child {
-    border-left: none; /* Hide left border for first column */
+    border-left: none;
 }
 
 .page__content td:last-child {
-    border-right: none; /* Hide right border for last column */
+    border-right: none;
 }
 
 .button-container {
-    text-align: right; /* Align button to the right */
+    text-align: right;
     margin-top: 1rem;
 }
 
 .button-container button {
     padding: 10px 20px;
-    background-color: #325D79; /* Green background */
+    background-color: #325D79;
     color: white;
     border: none;
     border-radius: 5px;
@@ -63,5 +74,5 @@
 }
 
 .button-container button:hover {
-    background-color: #d2871e; /* Darker green background on hover */
+    background-color: #d2871e;
 }
