@@ -29,6 +29,7 @@ import { ClientListComponent } from './client-list/client-list.component';
 import { ChartModule } from 'angular-highcharts';
 import { DeliveryTrackOrderComponent } from './delivery-track-order/delivery-track-order.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { SignupDeliveryComponent } from './signup-delivery/signup-delivery.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
     MainFooterComponent,
     ClientListComponent,
     DeliveryTrackOrderComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    SignupDeliveryComponent
   ],
   imports: [
     BrowserModule,

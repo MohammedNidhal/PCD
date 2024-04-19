@@ -1,0 +1,23 @@
+<div class="center">
+  <div class="rectangle">
+    <h2>Sign Up as delivery personal </h2>
+    <form (ngSubmit)="submitForm()">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+      </div>
+      <div>
+        <label for="cv">Upload CV:</label>
+        <input type="file" id="cv" name="cv" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" required>
+      </div>
+      <p class="already-have-account">Already have an account? <a routerLink="/login">Log in here</a>.</p>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+  
