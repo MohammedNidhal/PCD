@@ -1,7 +1,8 @@
 package com.mnm.mnmpcd.Repo;
 import org.springframework.data.jpa.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
-import org.springframework.data.jpa.repository.JpaRepositories;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.mnm.mnmpcd.Entity.Client;
 import java.util.Optional;
 @EnableJpaRepositories
 @Repository

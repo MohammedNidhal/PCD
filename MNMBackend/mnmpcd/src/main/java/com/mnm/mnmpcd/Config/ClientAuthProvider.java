@@ -1,7 +1,7 @@
 package com.mnm.mnmpcd.Config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotpe.Componenet;
+import org.springframework.stereotype.Component;
 import jakarta.annotation.PostConstruct;
 import java.util.Base64;
 @RequiredArgsConstructor
