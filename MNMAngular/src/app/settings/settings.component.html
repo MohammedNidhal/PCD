@@ -5,7 +5,8 @@
   <button (click)="showContent = 3">Security</button>
 </div>
             
-            <div *ngIf="showContent === 1" id="content1" class="content"><form  class="form-container">
+            <div *ngIf="showContent === 1" id="content1" class="content">
+              <form  class="form-container" (ngSubmit)="onSubmit()">
                 <div class="column">
                   <div>
                     <label for="name">First Name:</label>
