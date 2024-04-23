@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 import java.util.Date; 
-
+import java.util.HashSet;
+import java.util.Set;
 @Data @AllArgsConstructor @NoArgsConstructor @Setter @Getter
 
 @Entity
@@ -47,5 +48,8 @@ private String country;
 
 @Column(name = "address")
 private String address;
+
+@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+private Set<Order> orders = new HashSet<>();
 
 }
