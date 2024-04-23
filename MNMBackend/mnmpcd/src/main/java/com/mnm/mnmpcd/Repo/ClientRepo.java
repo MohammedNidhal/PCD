@@ -1,13 +1,10 @@
 package com.mnm.mnmpcd.Repo;
-import org.springframework.data.jpa.config.EnableJpaRepositories;
-import org.springframework.stereotype.Repository;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import com.mnm.mnmpcd.Entity.Client;
-import java.util.Optional;
-@EnableJpaRepositories
+
 @Repository
-public interface ClientRepo extends JpaRepository<Client,Integer> {
-    Optional <Client> findOneByEmailAndPassword(String email, String password);
-    Client findByEmail(String email);
+public interface ClientRepo extends JpaRepository<Client, Integer>{
 
 }
