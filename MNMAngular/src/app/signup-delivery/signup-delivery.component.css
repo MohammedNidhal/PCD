@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-    margin-bottom:100px;
+    margin-bottom: 5%;
   }
   
   .center {
@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 10%;
+    margin-top: 0%;
   }
   
   .rectangle {

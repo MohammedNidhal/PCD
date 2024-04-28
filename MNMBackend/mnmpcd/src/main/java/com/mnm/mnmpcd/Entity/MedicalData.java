@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Date; 
-
+import java.util.HashSet;
+import java.util.Set;
 @Data @AllArgsConstructor @NoArgsConstructor @Setter @Getter
 
 @Entity
@@ -49,6 +50,9 @@ public class MedicalData {
     
     @Column(name = "foodallergies")
     private String foodAllergies;
+
     @Column(name = "medicalcondition")
     private String medicalCondition;
+    @OneToMany(mappedBy = "Client", cascade = CascadeType.ALL)
+    private Set<MedicalData> medicalData = new HashSet<>();
 }
