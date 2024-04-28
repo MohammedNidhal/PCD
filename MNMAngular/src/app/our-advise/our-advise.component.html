@@ -13,5 +13,9 @@
         <p class="price">$150</p>
       </div>
     </div>
+    <div *ngIf="responseProducts">
+      <h1>Data from Flask API:</h1>
+      <p>{{ responseProducts.message }}</p>
+    </div>
   </div>
   

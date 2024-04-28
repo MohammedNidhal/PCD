@@ -12,7 +12,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { MedicalDataComponent } from './medical-data/medical-data.component';
 import { SettingsComponent } from './settings/settings.component';
-
 //Adding modules for side navbar and icons 
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule } from '@angular/material/sidenav';
