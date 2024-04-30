@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { JwtService } from '../services/jwt.service';
 
 @Component({
   selector: 'app-login',
@@ -9,20 +9,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
+  loginForm!: FormGroup;
 
-  constructor(private authService: AuthService, private loginService: LoginService, private router: Router) { }
+  constructor(
+    private service: JwtService,
+    private fb: FormBuilder,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
+  }
 
   login() {
-    this.loginService.getClientDetails(this.email, this.password)
-      .subscribe(
-        data => {
-          this.router.navigate(['/Dashboard']);
-        },
-        error => {
-          // Handle login error
+    this.service.login(this.loginForm.value).subscribe(
+      (response) => {
+        console.log(response);
+        if (response.jwt != null) {
+          alert("Hello, Your token is " + response.jwt);
+          const jwtToken = response.jwt;
+          localStorage.setItem('jwt', jwtToken);
+          this.router.navigateByUrl("/dashboard");
         }
-      );
+      }
+    );
   }
 }
+

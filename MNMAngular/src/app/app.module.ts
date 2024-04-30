@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { MedicalDataComponent } from './medical-data/medical-data.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
 //Adding modules for side navbar and icons 
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule } from '@angular/material/sidenav';
@@ -29,6 +30,7 @@ import { ChartModule } from 'angular-highcharts';
 import { DeliveryTrackOrderComponent } from './delivery-track-order/delivery-track-order.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { SignupDeliveryComponent } from './signup-delivery/signup-delivery.component';
+
 
 
 @NgModule({
@@ -62,7 +64,8 @@ import { SignupDeliveryComponent } from './signup-delivery/signup-delivery.compo
     MatIconModule,// for the dashboard 
     MatListModule,// for the dashboard 
     MatDividerModule,// for the dashboard 
-    ChartModule 
+    ChartModule,
+    ReactiveFormsModule ,
   ],
   providers: [
     provideClientHydration(),

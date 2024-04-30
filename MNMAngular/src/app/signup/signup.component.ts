@@ -1,43 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from '../services/client.service';
-import { Client } from '../client';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { JwtService } from '../services/jwt.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent implements OnInit {
-  step: number = 1;
-  medicalData: any = {};
-  client :Client=new Client();
+  signupForm!: FormGroup;
+  showPassword: boolean = false;
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 
+  constructor(
+    private service: JwtService,
+    private fb: FormBuilder
+  ) { }
 
+  ngOnInit(): void {
+    this.signupForm = this.fb.group({
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8),this.passwordValidator]],
+      confirmPassword: ['', [Validators.required]],
+      birthday: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      code: ['', [Validators.required]],
+      country: ['', [Validators.required]]
+    }, { validator: this.passwordMatchValidator });
+  }
+  passwordValidator(control: AbstractControl): ValidationErrors | null {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+    if (control.value && !passwordRegex.test(control.value)) {
+      return { invalidPassword: true };
+    }
+    return null;
+  }
 
-
-  constructor(private clientService: ClientService,  private router : Router){ }
-  ngOnInit() :void {}
-  nextStep() {
-    if (this.step === 1) {
-      // Validation can be added here if necessary
-      this.step++;
-    } else if (this.step === 2) {
-      this.step--;
+  passwordMatchValidator(formGroup: FormGroup) {
+    const password = formGroup.get('password')?.value;
+    const confirmPassword = formGroup.get('confirmPassword')?.value;
+    if (password !== confirmPassword) {
+      formGroup.get('confirmPassword')?.setErrors({ passwordMismatch: true });
+    } else {
+      formGroup.get('confirmPassword')?.setErrors(null);
     }
   }
-  saveClient(){
-    this.clientService.createClient(this.client).subscribe(data=>{
-    console.log(data);
-    this.goToClientList();
-  },
-    error=>console.log(error));
-  }
-    goToClientList(){
-      this.router.navigate(['clients']);
-    }
 
-  submit() {
-    console.log(this.client);
-    console.log(this.medicalData);
+  signup() {
+    console.log(this.signupForm.value);
+    this.service.register(this.signupForm.value).subscribe(
+      (response) => {
+        if (response.id != null) {
+          alert("Hello " + response.name);
+        }
+      }
+    );
   }
 }

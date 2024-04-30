@@ -1,119 +1,62 @@
 <div class="center">
   <div class="rectangle">
-@if (step === 1){
-<div>
     <h2>Step 1: Personal Data</h2>
-    <form (ngSubmit)="nextStep()">
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
       <div>
         <label for="name">First Name:</label>
-        <input type="text" id="name" name="name" [(ngModel)]="client.firstName" required>
+        <input type="text" id="name" name="name"  formControlName="firstName" required>
       </div>
       <div>
         <label for="name">Last Name:</label>
-        <input type="text" id="name" name="name" [(ngModel)]="client.lastName" required>
+        <input type="text" id="name" name="name" formControlName="lastName" required>
       </div>
       <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="client.email" required>
+        <input type="email" id="email" name="email"  formControlName="email" required>
       </div>
       <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="client.password" required>
-      </div>
+        <label for="password">
+          Password:
+          <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" formControlName="password" required>
+          <button type="button" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'Hide' : 'Show' }} Password
+          </button>
+        </label>
+      </div>      
       <div>
         <label for="password">Confirm Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="client.password" required>
+        <input type="password" id="password" name="password"  formControlName="confirmPassword" required>
       </div>
       <div> 
       <label for="birthday">Date of birth:</label>
-      <input type="date" id="birthday" name="birthday" [(ngModel)]="client.birthday" required>
+      <input type="date" id="birthday" name="birthday"  formControlName="birthday" required>
     </div>
     <div>
       <label for="gender">Gender</label>
-      <select name="gender" [(ngModel)]="client.gender">
+      <select name="gender" formControlName="gender" required >
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
       </div>
     <div>
     <label for="address">Address:</label>
-    <input type="text" id="address" name="address" [(ngModel)]="client.address" required>
+    <input type="text" id="address" name="address"  formControlName="address" required>
     </div>
   <div>
     <label for="address">City:</label>
-    <input type="text" id="address" name="address" [(ngModel)]="client.city" required>
+    <input type="text" id="City" name="address"  formControlName="city" required>
   </div>
   <div>
     <label for="address">Postal Code:</label>
-    <input type="text" id="address" name="address" [(ngModel)]="client.postalCode" required>
+    <input type="text" id="Address" name="address"  formControlName="code"required>
   </div>
   <div>
     <label for="address">Country:</label>
-    <input type="text" id="address" name="address" [(ngModel)]="client.country" required>
+    <input type="text" id="Country" name="address"  formControlName="country"required>
   </div>
-      <button type="submit" class="full-width">Next</button>
+      <button type="submit" class="full-width" [disabled]="signupForm.invalid">Register</button>
     </form>
+    <p class="already-have-account">Already have an account? <a routerLink="/login">Log in here</a>.</p>
   </div>
-} 
-@else if (step === 2){
-<div>
-    <h2>Step 2: Medical Data</h2>
-    <form (ngSubmit)="submit()">
-      <div>
-        <label for="sleepHours">Sleep Hours</label>
-        <input type="text" id="sleepHours" name="sleepHours" [(ngModel)]="medicalData.sleepHours" required>
-      </div>
-      <div>
-        <label for="mass">Mass</label>
-        <input type="text" id="mass" name="mass" [(ngModel)]="medicalData.mass" required>
-      </div>
-      <div>
-        <label for="height">Height</label>
-        <input type="text" id="height" name="height" [(ngModel)]="medicalData.height" required>
-      </div>
-      <div>
-        <label for="bloodType">Blood Type:</label>
-        <select name="bloodType" [(ngModel)]="medicalData.bloodType" >
-          <option value="A+">A+</option>
-          <option value="A-">A-</option>
-        </select>
-      </div>
-      <div>
-        <label for="foodType">Food Type</label>
-        <select name="foodType" [(ngModel)]="medicalData.foodType" >
-          <option value="vegan">Vegan</option>
-          <option value="vegetarian">Vegetarian</option>
-        </select>
-      </div>
-      <div>
-        <label for="bloodsugar">Blood Sugar</label>
-        <select name="bloodsugar" [(ngModel)]="medicalData.bloodsugar" >
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div>
-        <label for="foodallergies">Food Allergies</label>
-        <select name="foodallergies" [(ngModel)]="medicalData.foodallergies" >
-          <option value="gluten">Gluten</option>
-          <option value="nuts">Nuts</option>
-        </select>
-      </div>
-      <div>
-        <label for="medicalconditions">Medical Conditions:</label>
-        <select name="medicalconditions" [(ngModel)]="medicalData.medicalconditions" >
-          <option value="asthma">Asthma</option>
-          <option value="diabetes">Diabetes</option>
-        </select>
-      </div>
-      <div class="button-container">
-        <button type="button" class="back" (click)="nextStep()">< Back</button>
-        <button type="submit" class="register">Register</button>
-      </div>
-    </form>
-  </div>
-}
-<p class="already-have-account">Already have an account? <a routerLink="/login">Log in here</a>.</p>
-</div>
 </div>
 <app-main-footer></app-main-footer>
