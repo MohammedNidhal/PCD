@@ -10,17 +10,15 @@
                     <th>Discount</th>
                     <th>Total</th>
                     <th>Delivered On</th>
-                    <th>E-Receipt</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let order of orders">
                     <td>{{ order.orderId }}</td>
-                    <td>{{ order.value | currency }}</td>
+                    <td>{{ order.value }} TND</td>
                     <td>{{ order.discount }}</td>
-                    <td>{{ order.total | currency }}</td>
+                    <td>{{ order.total  }} TND</td>
                     <td>{{ order.deliveredOn | date }}</td>
-                    <td>{{ order.eReceipt ? 'Yes' : 'No' }}</td>
                   </tr>
                 </tbody>
               </table>

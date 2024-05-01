@@ -16,9 +16,12 @@ export class DashboardComponent {
     credits: {
       enabled: false
     },
+    xAxis: {
+      categories: ['22/01', '23/01', '24/01', '25/01', '26/01']
+    },
     series: [
       {
-        name: 'Line 1',
+        name: 'Hours',
         data: [5, 6, 5.5,8,7.5]
       } as any
     ]
@@ -29,7 +32,7 @@ export class DashboardComponent {
         plotShadow:false,
       },
       title: {
-        text: 'Pie chart',
+        text: 'Top 4 Categories',
         floating: true
       },
       credits: {
@@ -49,7 +52,7 @@ export class DashboardComponent {
       },
       series: [
         {type: 'pie',
-          data: [{name: 'Category 1',y:1,color:"#325D79"} , {name: 'Category 2',y:2,color:"#4BAB1D"} , {name: 'Category 3',y:3,color:"#F9A26C"} ,{name: 'Category 4',y:4,color:"#B1B1B1"} ]
+          data: [{name: 'Vitamins',y:1,color:"#325D79"} , {name: 'No Glutin',y:2,color:"#4BAB1D"} , {name: 'Sugar Free',y:3,color:"#F9A26C"} ,{name: 'Other',y:4,color:"#B1B1B1"} ]
         }
       ]
     })
