@@ -4,56 +4,93 @@
     <form [formGroup]="signupForm" (ngSubmit)="signup()">
       <div>
         <label for="name">First Name:</label>
-        <input type="text" id="name" name="name"  formControlName="firstName" required>
+        <input type="text" id="name" name="name" formControlName="firstName" required>
+        <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+          <small *ngIf="signupForm.get('firstName')?.errors?.['required']">First Name is required</small>
+        </div>
       </div>
       <div>
         <label for="name">Last Name:</label>
         <input type="text" id="name" name="name" formControlName="lastName" required>
+        <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
+          <small *ngIf="signupForm.get('lastName')?.errors?.['required']">Last Name is required</small>
+        </div>
       </div>
       <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"  formControlName="email" required>
+        <input type="email" id="email" name="email" formControlName="email" required>
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+          <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</small>
+          <small *ngIf="signupForm.get('email')?.errors?.['email']">Invalid email format</small>
+        </div>
       </div>
       <div>
         <label for="password">
           Password:
           <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" formControlName="password" required>
-          <button type="button" (click)="togglePasswordVisibility()">
-            {{ showPassword ? 'Hide' : 'Show' }} Password
+          <button type="button" class="toggle-button" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'Hide' : 'Show' }} 
           </button>
         </label>
-      </div>      
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+          <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required</small>
+          <small *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</small>
+          <small *ngIf="signupForm.get('password')?.errors?.['invalidPassword']">Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character</small>
+        </div>
+      </div>
       <div>
         <label for="password">Confirm Password:</label>
-        <input type="password" id="password" name="password"  formControlName="confirmPassword" required>
+        <input type="password" id="password" name="password" formControlName="confirmPassword" required>
+        <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+          <small *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required</small>
+          <small *ngIf="signupForm.get('confirmPassword')?.errors?.['passwordMismatch']">Passwords do not match</small>
+        </div>
       </div>
-      <div> 
-      <label for="birthday">Date of birth:</label>
-      <input type="date" id="birthday" name="birthday"  formControlName="birthday" required>
-    </div>
-    <div>
-      <label for="gender">Gender</label>
-      <select name="gender" formControlName="gender" required >
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
+      <div>
+        <label for="birthday">Date of birth:</label>
+        <input type="date" id="birthday" name="birthday" formControlName="birthday" required>
+        <div *ngIf="signupForm.get('birthday')?.invalid && signupForm.get('birthday')?.touched">
+          <small *ngIf="signupForm.get('birthday')?.errors?.['required']">Date of Birth is required</small>
+        </div>
       </div>
-    <div>
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address"  formControlName="address" required>
-    </div>
-  <div>
-    <label for="address">City:</label>
-    <input type="text" id="City" name="address"  formControlName="city" required>
-  </div>
-  <div>
-    <label for="address">Postal Code:</label>
-    <input type="text" id="Address" name="address"  formControlName="code"required>
-  </div>
-  <div>
-    <label for="address">Country:</label>
-    <input type="text" id="Country" name="address"  formControlName="country"required>
-  </div>
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" formControlName="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div *ngIf="signupForm.get('gender')?.invalid && signupForm.get('gender')?.touched">
+          <small *ngIf="signupForm.get('gender')?.errors?.['required']">Gender is required</small>
+        </div>
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" formControlName="address" required>
+        <div *ngIf="signupForm.get('address')?.invalid && signupForm.get('address')?.touched">
+          <small *ngIf="signupForm.get('address')?.errors?.['required']">Address is required</small>
+        </div>
+      </div>
+      <div>
+        <label for="City">City:</label>
+        <input type="text" id="City" name="city" formControlName="city" required>
+        <div *ngIf="signupForm.get('city')?.invalid && signupForm.get('city')?.touched">
+          <small *ngIf="signupForm.get('city')?.errors?.['required']">City is required</small>
+        </div>
+      </div>
+      <div>
+        <label for="code">Postal Code:</label>
+        <input type="text" id="code" name="code" formControlName="code" required>
+        <div *ngIf="signupForm.get('code')?.invalid && signupForm.get('code')?.touched">
+          <small *ngIf="signupForm.get('code')?.errors?.['required']">Postal Code is required</small>
+        </div>
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" formControlName="country" required>
+        <div *ngIf="signupForm.get('country')?.invalid && signupForm.get('country')?.touched">
+          <small *ngIf="signupForm.get('country')?.errors?.['required']">Country is required</small>
+        </div>
+      </div>
       <button type="submit" class="full-width" [disabled]="signupForm.invalid">Register</button>
     </form>
     <p class="already-have-account">Already have an account? <a routerLink="/login">Log in here</a>.</p>
