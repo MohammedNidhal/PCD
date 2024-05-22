@@ -27,25 +27,15 @@
     border-radius: 4px;
   }
   
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
+  .full-width:hover {
     background-color: #0056b3;
-  }
-  
-  .form-bottom {
+}
+
+.form-bottom {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-  }
+}
   
   .remember-me,
   .forget-password {
@@ -76,8 +66,15 @@
     text-decoration: underline;
   }
   .full-width {
-    width: 100%;
     background-color: #F9A26C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
   }
   .already-have-account a {
     color: #000000;

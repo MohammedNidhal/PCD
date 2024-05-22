@@ -27,7 +27,7 @@ export class MedicalDataComponent {
     series: [
       {
         name: 'BMI Score',
-        data: [20, 21, 22, 23, 24], // Replace with actual BMI scores for each month
+        data: [20, 21, 21, 22, 20], // Replace with actual BMI scores for each month
         color:'#325D79'
       } as any
     ]
@@ -39,7 +39,7 @@ export class MedicalDataComponent {
       type: 'line'
     },
     title: {
-      text: 'Money Spent in Last Orders'
+      text: 'Money Spent on health Last Orders'
     },
     xAxis: {
       categories: ['Order 1', 'Order 2', 'Order 3', 'Order 4', 'Order 5'] // Add more orders as needed

@@ -10,11 +10,12 @@ import { JwtService } from '../services/jwt.service';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-
+  showContent: boolean = true;
   constructor(
     private service: JwtService,
     private fb: FormBuilder,
     private router: Router
+    
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +37,10 @@ export class LoginComponent {
         }
       }
     );
+  }
+  goTologin(): void {
+    this.showContent = false;
+    this.router.navigate(['/login']);
   }
 }
 

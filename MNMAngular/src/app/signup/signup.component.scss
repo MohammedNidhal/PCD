@@ -13,7 +13,8 @@ small {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-top: 10%;
+  margin-top: 15%;
+  margin-bottom: 20%;
 }
 
 .rectangle {
@@ -73,6 +74,35 @@ button[type="button"]:hover {
 .full-width {
   width: 100%;
 }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.full-width {
+  background-color: #325D79;
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 10px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block; /* Ensure it behaves like a block element */
+  text-decoration: none; /* Remove underline */
+  width: 100%;
+}
+
+.full-width[type="submit"] {
+  background-color: #F9A26C;
+}
+
+.full-width:hover {
+  background-color: #325D79;
+}
+
+.full-width[type="submit"]:hover {
+  background-color: #F9A26C;
+}
+
 .button-container {
   display: flex;
   justify-content: space-between;

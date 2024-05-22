@@ -36,8 +36,13 @@
 
     <div class="container-right">
         <div *ngIf="selectedOrder">
-            <div [attr.colspan]="7">{{ selectedOrder.details }}</div>
+          <div class="order-item" *ngFor="let detail of selectedOrder.details">
+            <h6>{{ detail.name }}</h6>
+            <img [src]="detail.image" alt="{{ detail.name }}" />
+            <p>{{ detail.price }}</p>
         </div>
-    </div>
+      </div>
 </div>
-<app-main-footer></app-main-footer>
+      
+    
+

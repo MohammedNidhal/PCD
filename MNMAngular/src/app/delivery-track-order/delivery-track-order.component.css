@@ -17,7 +17,25 @@
     color: #325D79;
     font-size: 1.6rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: auto;
+    overflow: auto; 
+    display: flex;
+    flex-wrap: wrap;
+}
+.order-item {
+    flex: 0 0 calc(33.33% - 20px); /* Each order item takes up one-third of the container's width with some margin */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .order-item h6{
+    margin-top: 0;
+  }
+  
+  .order-item img {
+    max-width: 70px; /* Set a maximum width for the images */
+    max-height:70px; /* Set a maximum height for the images */
+    height: auto;
 }
 
 .page__content {

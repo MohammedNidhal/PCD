@@ -1,49 +1,15 @@
 <div class="container">
+  <div *ngIf="responseProducts">
+    <h1>Recommended Products:</h1>
+    <div *ngFor="let product of responseProducts">
       <div class="product">
-        <img src="https://transformlbk.com/cdn/shop/products/image_d242d838-11eb-4bbe-994a-16281b426bdf_2048x.png?v=1615325283" alt="Product 1">
+        <img [src]="product.price" alt="Product Image" style="max-width: 100px;">
         <div class="product-details">
-            <p class="name">BURN</p>
-            <p class="price"> 66 TND</p>
-        </div>
-    </div>
-    <div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzW6stmKVDaXivbUD7yyNo2aIi7p3NrbTZj6pnCkH3GGktONvjVOdcZBUxv23rA2RL43o&usqp=CAU" alt="Product 1">
-      <div class="product-details">
-          <p class="name">Bee Choo</p>
-          <p class="price">88 TND</p>
+        <p class="name">{{ product.name }}</p>
+        <p class="price">Price: {{ product.description }}</p>
       </div>
-  </div>
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/310HJ8DxmDL._AC_UF1000,1000_QL80_.jpg" alt="Product 1">
-    <div class="product-details">
-        <p class="name">Baidyanath</p>
-        <p class="price">99 TND</p>
+      </div>
     </div>
-</div>
-<div class="product">
-  <img src="https://m.media-amazon.com/images/I/71P+1AT07uL.jpg" alt="Product 1">
-  <div class="product-details">
-      <p class="name">Black seed</p>
-      <p class="price"> 119 TND</p>
   </div>
-</div>
-<div class="product">
-<img src="https://media.takealot.com/covers_images/bf717daa01684334aef66d2800c39252/s-fb.file" alt="Product 1">
-<div class="product-details">
-    <p class="name">Seed Oil</p>
-    <p class="price">75 TND</p>
-</div>
-</div>
-<div class="product">
-<img src="https://www.healthoxide.com/cdn/shop/products/Front_f0edf035-4905-4950-a3c9-4ee34ac4de56.jpg?v=1623314526&width=360" alt="Product 1">
-<div class="product-details">
-  <p class="name">Glow Active</p>
-  <p class="price">149 TND</p>
-</div>
-    </div>
+  </div>
 
-    <div *ngIf="responseProducts">
-      <h1>Data from Flask API:</h1>
-      <p>{{ responseProducts.message }}</p>
-    </div>
-  

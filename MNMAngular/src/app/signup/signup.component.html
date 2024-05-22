@@ -51,6 +51,7 @@
         <input type="date" id="birthday" name="birthday" formControlName="birthday" required>
         <div *ngIf="signupForm.get('birthday')?.invalid && signupForm.get('birthday')?.touched">
           <small *ngIf="signupForm.get('birthday')?.errors?.['required']">Date of Birth is required</small>
+          <small *ngIf="signupForm.get('birthday')?.errors?.['underage']">You must be at least 18 years old</small>
         </div>
       </div>
       <div>
@@ -86,12 +87,15 @@
       </div>
       <div>
         <label for="country">Country:</label>
-        <input type="text" id="country" name="country" formControlName="country" required>
+        <select id="country" name="country" formControlName="country" required>
+          <option value="" disabled selected>Select your country</option>
+          <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
         <div *ngIf="signupForm.get('country')?.invalid && signupForm.get('country')?.touched">
           <small *ngIf="signupForm.get('country')?.errors?.['required']">Country is required</small>
         </div>
       </div>
-      <button type="submit" class="full-width" [disabled]="signupForm.invalid">Register</button>
+      <a type="submit" class="full-width" routerLink="/MedicalDataRegistration">Register</a>
     </form>
     <p class="already-have-account">Already have an account? <a routerLink="/login">Log in here</a>.</p>
   </div>
